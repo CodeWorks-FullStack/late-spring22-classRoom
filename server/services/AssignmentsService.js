@@ -7,7 +7,7 @@ class AssignmentsService {
   }
   async create(body) {
     const assignment = await  dbContext.Assignments.create(body)
-    // FIXME idk yet?
+    // FIXME idk yet? it was a version error this now works but you need to update your mongoose version.  The template will be updated so don't worry about this
     await assignment.populate('student')
     await assignment.populate('classRoom')
     return assignment
